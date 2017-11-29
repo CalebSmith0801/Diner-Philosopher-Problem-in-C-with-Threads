@@ -29,7 +29,7 @@ void *Eat(int n) {
 }
 
 int main(){
-	int j;						//For the sake of making the program finish
+	int j;			    //For the sake of making the program finish
 	for (j = 0; j < 5; j++){    //each philospher only eats 5 times
 		int i;
 		for(i = 0; i < 5; i++)
@@ -39,10 +39,10 @@ int main(){
 			pthread_create(&philosopher[i], NULL, (void *)Eat, (void *)i); //Creates threads for philosphers and calls function
 		
 		for(i = 0; i < 5; i++)
-			pthread_join(philosopher[i], NULL);  //Waits for all thread to exit
+			pthread_join(philosopher[i], NULL);  //Waits for all threads to exit
 		
 		for(i = 0; i<5; i++)
-			pthread_mutex_destroy(&chopstick[i]); //Destorys all the threads
+			pthread_mutex_destroy(&chopstick[i]); //Destroys all the threads
 		printf("\n");
 	}
 	return 0;
